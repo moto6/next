@@ -45,9 +45,18 @@ jsconfig.json	Configuration file for JavaScript
 
 ### [Routing Files](https://nextjs.org/docs/getting-started/project-structure#routing-files)
 
-### 
+### 연결 및 탐색 
+- 경로탐색 4가지 방법
+  - <Links>
+  - UseRouter
+  - redirect
+  - 네이티브 HistoryAPI
+  - 
 
-### 
+
+
+
+### 참고 
 
 |  |  |  |
 | --- | --- | --- |

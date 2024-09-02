@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function DashboardLayout({
     children,
 }: {
@@ -9,7 +11,7 @@ export default function DashboardLayout({
         {/* Include shared UI here e.g. a header or sidebar */}
         <nav>
             <h1>what??</h1>
-
+            <Link href="/dashboard">Dashboard</Link>
         </nav>
 
         {children}
