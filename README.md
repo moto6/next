@@ -55,6 +55,12 @@ jsconfig.json	Configuration file for JavaScript
 
 
 
+### next js
+- 파일기반 라우팅
+  - page.tsx : 
+  - layout.tsx : metadate, RootLayout : 왜 필요한지 알아보기, 없으면 강제로 만들어줌
+  - 
+
 
 ### 참고 
 
