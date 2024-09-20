@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import Navigation from "../components/navigation";
 
 export default function Page() {
-    return <h1>Hello, Next.js!</h1>
+    return (
+        <div>
+            <Navigation></Navigation>
+            <h1>Hello!!</h1>
+        </div>
+    )
 }
 
 export const metadata: Metadata = {
     title: 'dong Nextjs',
 }
-
-// export default function Page() {
-//     return '...'
-// }
