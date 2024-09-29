@@ -16,6 +16,9 @@ export default function Navigation() {
                 <li>
                     <Link href="/about-us">About-Us</Link> {path === "/about-us" ? '🥰' : ''}
                 </li>
+                <li>
+                    <Link href="/about-us/company/jobs/sales">/about-us/company/jobs/sales</Link>
+                </li>
             </ul>
         </nav>
     )

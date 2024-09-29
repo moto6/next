@@ -4,7 +4,6 @@ import Navigation from "../components/navigation";
 export default function Page() {
     return (
         <div>
-            <Navigation></Navigation>
             <h1>Hello!!</h1>
         </div>
     )
