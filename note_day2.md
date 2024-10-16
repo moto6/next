@@ -130,3 +130,44 @@ VSCode에서 오류, 경고 및 기타 언어 진단을 강조하여 표시해�
 https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
 
 
+-----------
+
+## nextjs 에서의 hydrate
+
+### 개요
+- Next.js에서 "hydrate"는 서버에서 렌더링된 HTML을 클라이언트 쪽에서 React가 다시 인식하고 관리하는 과정을 말합니다. 
+- 이 과정은 **서버 사이드 렌더링(SSR)**된 페이지가 초기 로드된 후, 클라이언트에서 React의 상태 및 이벤트 처리가 가능해지도록 돕는 역할을 합니다.
+
+### Hydration 과정
+- 서버 사이드 렌더링(SSR): Next.js는 서버에서 페이지를 HTML로 렌더링하여 브라우저에 전달합니다. 이때, HTML은 정적 콘텐츠로 제공되며, JavaScript 동작은 아직 없습니다.
+- Hydration: 클라이언트는 서버에서 받은 HTML을 화면에 렌더링한 후, React가 해당 HTML을 바탕으로 JavaScript를 통해 컴포넌트 상태 및 이벤트 처리를 연결합니다. 이 과정에서 React는 서버가 렌더링한 HTML과 일치하는지 비교하고 이를 조정합니다.
+
+### Hydration의 필요성
+- 서버에서 미리 렌더링된 HTML을 통해 빠른 초기 페이지 로드를 가능하게 하지만, 상호작용을 위한 JavaScript가 없으면 동적인 동작이 불가능합니다. 
+- Hydration을 통해 React는 서버에서 렌더링된 HTML을 클라이언트에서 다시 활성화하여 상호작용 가능하게 만듭니다.
+
+### 예시
+```jsx
+export default function Home() {
+    const [count, setCount] = useState(0);
+    
+    return (
+        <div>
+            <h1>{count}</h1>
+            <button onClick={() => setCount(count+ 1)}>Increment</button>
+        </div>
+    );
+}
+```
+- 서버에서는 h1 태그와 button이 포함된 HTML만 전송되지만, Hydration 후에 클라이언트에서 button 클릭 이벤트 및 상태 관리가 활성화됩니다.
+- Hydration 과정에서 문제가 발생하면 "클라이언트와 서버의 HTML 불일치" 같은 경고가 나타날 수 있습니다.
+
+### 면접질문 `hydrate`, `use client`
+- `hydrate 장점` : 유저들이 다운로드받아야하는 js 가 줄어듬
+  - client component 만 다운로드 받게 됨 (아주작아서 좋음)
+- `use client` : 어떤 컴포넌트가 하이드레이트 되는지 (=어떤것이 interactive 가 필요한지 or 필요한지)
+
+
+-------
+
+
