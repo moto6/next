@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
     return (
         <div>
-            <Navigation/>
+            {/*<Navigation/>*/}
             <h1>Not found</h1>
         </div>
     )

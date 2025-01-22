@@ -1,31 +1,31 @@
 export async function generateStaticParams() {
-    const movieConfigs = [
-        { id: '1', region: 'us', page: 'home' },
-        { id: '2', region: 'kr', page: 'details' },
-        { id: '3', region: 'jp', page: 'summary' },
-    ];
-
-    return movieConfigs.map(({ id, region, page }) => ({
-        id,
-        region,
-        page,
-    }));
+    const movieIds = ['1', '2', '3']; // 정적으로 생성할 ID 목록
+    return movieIds.map((id) => ({ id }));
 }
 
-
-export default function MovieDetail({
-                                        params: {id},
-                                        searchParams: {region, page},
-                                    }: {
-    params: { id: string };
-    searchParams: { region: string; page: string };
-}) {
-    console.log(`id: ${id}, Region: ${region}, Page: ${page}`);
-    return <div>
-        <h1>Movie Detail</h1>
-        <p></p>
-    </div>
+export default function MovieDetail({ params }: { params: { id: string } }) {
+    return (
+        <div>
+            <h1>Movie Detail</h1>
+            <p>Movie ID: {params.id}</p>
+        </div>
+    );
 }
+//
+//
+// export default function MovieDetail({
+//                                         params: {id},
+//                                         searchParams: {region, page},
+//                                     }: {
+//     params: { id: string };
+//     searchParams: { region: string; page: string };
+// }) {
+//     console.log(`id: ${id}, Region: ${region}, Page: ${page}`);
+//     return <div>
+//         <h1>Movie Detail</h1>
+//         <p></p>
+//     </div>
+// }
 /*
 
 {

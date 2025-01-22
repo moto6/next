@@ -28,4 +28,5 @@ app.get('/movies', (req, res) => {
 // 서버 시작
 app.listen(port, () => {
     console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
+    console.log("endpoint : http://localhost:3000/movies");
 });
