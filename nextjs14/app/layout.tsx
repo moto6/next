@@ -1,5 +1,14 @@
 import Navigation from "../components/navigation";
 import React from "react";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: {
+        template: "%s | Layout NextApp",
+        default: "No_Metadata",
+    },
+    description: "App desc",
+}
 
 export default function RootLayout({children}: { children: React.ReactNode }) {
     return (
@@ -8,9 +17,9 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         {/* Layout UI */}
         <body>
         <Navigation/>
-        <h6>layout 1</h6>
+        <h6>RootLayout BEGIN</h6>
         {children}
-        <h6>layout 2</h6>
+        <h6>RootLayout END</h6>
         &copy; {new Date().getFullYear()}
         </body>
         </html>

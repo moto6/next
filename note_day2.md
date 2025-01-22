@@ -170,4 +170,7 @@ export default function Home() {
 
 -------
 
-
+### metadata
+- 중첩됨(nested)
+- 서버컴포넌트에만 사용, 클라이언트에서는 사용불가능
+- 

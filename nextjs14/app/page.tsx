@@ -1,5 +1,4 @@
-import type { Metadata } from 'next'
-import Navigation from "../components/navigation";
+import type {Metadata} from 'next'
 
 export default function Page() {
     return (
