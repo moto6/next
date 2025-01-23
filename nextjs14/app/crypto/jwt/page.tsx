@@ -1,6 +1,7 @@
 import React from "react";
 import {Metadata} from "next";
-// import EncryptionAlgorithms from "../../../components/EncryptionAlgorithms";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import EncryptionAlgorithms from "../../../components/EncryptionAlgorithms";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function JwtPage() {
     return (
         <div className="container my-5">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
             <h1 className="text-center mb-4">JWT Decoder</h1>
             <div className="row">
                 <div className="col-md-6">
@@ -21,7 +22,7 @@ export default function JwtPage() {
                 <div className="col-md-6">
                     <h4>Decoded</h4>
                     <div className="mb-3">
-                        {/*<EncryptionAlgorithms/>*/}
+                        <EncryptionAlgorithms/>
                     </div>
                     <div className="border p-3 bg-light" id="decodedPayload">
                         <pre className="mb-0">Decoded payload will appear here...</pre>
