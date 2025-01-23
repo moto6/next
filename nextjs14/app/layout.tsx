@@ -1,5 +1,5 @@
 import "../styles/global.css";
-import Navigation from "../components/navigation";
+import Navigation from "../components/Navigation";
 import React from "react";
 import {Metadata} from "next";
 

@@ -1,11 +1,12 @@
 import React from "react";
 import {Metadata} from "next";
+// import EncryptionAlgorithms from "../../../components/EncryptionAlgorithms";
 
 export const metadata: Metadata = {
     title: "aes",
 }
 
-export default function AesPage() {
+export default function JwtPage() {
     return (
         <div className="container my-5">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -20,21 +21,7 @@ export default function AesPage() {
                 <div className="col-md-6">
                     <h4>Decoded</h4>
                     <div className="mb-3">
-                        <label htmlFor="algorithmSelect" className="form-label">Algorithm & Token Type</label>
-                        <select id="algorithmSelect" className="form-select">
-                            <option selected>HS256</option>
-                            <option>HS384</option>
-                            <option>HS512</option>
-                            <option>RS256</option>
-                            <option>RS384</option>
-                            <option>RS512</option>
-                            <option>ES256</option>
-                            <option>ES384</option>
-                            <option>ES512</option>
-                            <option>PS256</option>
-                            <option>PS384</option>
-                            <option>PS512</option>
-                        </select>
+                        {/*<EncryptionAlgorithms/>*/}
                     </div>
                     <div className="border p-3 bg-light" id="decodedPayload">
                         <pre className="mb-0">Decoded payload will appear here...</pre>
