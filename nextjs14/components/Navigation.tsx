@@ -19,6 +19,12 @@ export default function Navigation() {
                 <li>
                     <Link href="/about-us/company/jobs/sales">/about-us/company/jobs/sales</Link>
                 </li>
+                <li>
+                    <Link href="/crypto/aes">aes</Link> {path === "/crypto/aes" ? '🥰' : ''}
+                </li>
+                <li>
+                    <Link href="/crypto/jwt">jwt</Link> {path === "/crypto/jwt" ? '🥰' : ''}
+                </li>
             </ul>
         </nav>
     )
