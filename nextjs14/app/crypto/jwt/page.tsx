@@ -1,7 +1,6 @@
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import EncryptionAlgorithms from "../../../components/EncryptionAlgorithms";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -22,7 +21,6 @@ export default function JwtPage() {
                 <div className="col-md-6">
                     <h4>Decoded</h4>
                     <div className="mb-3">
-                        <EncryptionAlgorithms/>
                     </div>
                     <div className="border p-3 bg-light" id="decodedPayload">
                         <pre className="mb-0">Decoded payload will appear here...</pre>
