@@ -1,37 +1,38 @@
 "use client";
-
 import {useEffect, useState} from 'react';
-import {useRouter} from 'next/router';
 import Link from 'next/link';
 
-export default function NavigationTab() {
+const NavigationTab = () => {
     const [tabs, setTabs] = useState([
-        { id: 1, label: 'Home', href: '/' },
+        {id: 1, label: 'Home', href: '/'},
     ]);
     const [isClient, setIsClient] = useState(false); // 클라이언트 렌더링 확인
-    const router = useRouter();
 
+    // 클라이언트 렌더링 활성화
     useEffect(() => {
-        setIsClient(true); // 클라이언트 상태 활성화
+        setIsClient(true); // 클라이언트에서만 true로 설정
     }, []);
 
-    // 탭 추가 함수
     const addTab = (tab) => {
         if (!tabs.find((t) => t.href === tab.href)) {
             setTabs([...tabs, tab]);
         }
-        router.push(tab.href);
+        // router 관련 작업도 클라이언트에서만 실행
+        if (isClient) {
+            const router = require('next/router').useRouter();
+            router.push(tab.href);
+        }
     };
 
-    // 탭 삭제 함수
     const removeTab = (tabId) => {
         const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
         setTabs(updatedTabs);
 
-        // 삭제 후 마지막 탭으로 이동
-        if (updatedTabs.length > 0) {
+        if (updatedTabs.length > 0 && isClient) {
+            const router = require('next/router').useRouter();
             router.push(updatedTabs[updatedTabs.length - 1].href);
-        } else {
+        } else if (isClient) {
+            const router = require('next/router').useRouter();
             router.push('/');
         }
     };
@@ -62,11 +63,11 @@ export default function NavigationTab() {
                         <div
                             key={tab.id}
                             className={`flex items-center px-4 py-2 ${
-                                router.pathname === tab.href ? 'bg-white border' : 'bg-gray-200'
+                                isClient && require('next/router').useRouter().pathname === tab.href ? 'bg-white border' : 'bg-gray-200'
                             }`}
                         >
-                            <Link href={tab.href}>
-                                <a className="mr-2">{tab.label}</a>
+                            <Link id="link" href={tab.href} className="mr-2">
+                                {tab.label}
                             </Link>
                             <button onClick={() => removeTab(tab.id)} className="text-red-500">
                                 x
@@ -77,12 +78,11 @@ export default function NavigationTab() {
 
                 {/* Content Area */}
                 <div className="p-4">
-                    {/* 현재 페이지가 렌더링됨 */}
-                    <p>현재 페이지: {router.pathname}</p>
+                    <p>현재 페이지: {isClient ? require('next/router').useRouter().pathname : 'Loading...'}</p>
                 </div>
             </div>
         </div>
     );
 };
 
-
+export default NavigationTab;
