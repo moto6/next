@@ -1,7 +1,7 @@
 import "../styles/global.css";
-import Navigation from "../components/Navigation";
 import React from "react";
 import {Metadata} from "next";
+import NavigationTab from "../components/NavigationTab";
 
 export const metadata: Metadata = {
     title: {
@@ -20,10 +20,11 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <title></title>
         </head>
         <body>
-        <Navigation/>
+        <NavigationTab/>
         {children}
         &copy; {new Date().getFullYear()}
         </body>
         </html>
     )
 }
+// <Navigation/>
