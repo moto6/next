@@ -1,11 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const NavigationTab = () => {
+
+const MultiPageNabTab = () => {
     const [tabs, setTabs] = useState([
-        { id: 1, label: "Home", href: "/" },
+        {id: 1, label: "Home", href: "/"},
     ]);
     const [isClient, setIsClient] = useState(false); // 클라이언트 렌더링 확인
 
@@ -14,7 +16,8 @@ const NavigationTab = () => {
         setIsClient(true); // 클라이언트에서만 true로 설정
     }, []);
 
-    const router = isClient ? useRouter() : null;
+    const router = useRouter();
+
 
     const addTab = (tab) => {
         if (!tabs.find((t) => t.href === tab.href)) {
@@ -42,13 +45,13 @@ const NavigationTab = () => {
             {/* Left Navigation */}
             <div className="w-48 bg-gray-200 p-4">
                 <button
-                    onClick={() => addTab({ id: 2, label: "Dashboard", href: "/dashboard" })}
+                    onClick={() => addTab({id: 2, label: "Dashboard", href: "/dashboard"})}
                     className="block mb-2"
                 >
                     Dashboard
                 </button>
                 <button
-                    onClick={() => addTab({ id: 3, label: "Settings", href: "/settings" })}
+                    onClick={() => addTab({id: 3, label: "Settings", href: "/settings"})}
                     className="block mb-2"
                 >
                     Settings
@@ -62,9 +65,7 @@ const NavigationTab = () => {
                     {tabs.map((tab) => (
                         <div
                             key={tab.id}
-                            className={`flex items-center px-4 py-2 ${
-                                isClient && router?.pathname === tab.href ? "bg-white border" : "bg-gray-200"
-                            }`}
+                            className={`flex items-center px-4 py-2 ${usePathname() === tab.href ? "bg-white border" : "bg-gray-200"}`}
                         >
                             <Link id="link" href={tab.href} className="mr-2">
                                 {tab.label}
@@ -78,11 +79,11 @@ const NavigationTab = () => {
 
                 {/* Content Area */}
                 <div className="p-4">
-                    <p>현재 페이지: {isClient ? router?.pathname : "Loading..."}</p>
+                    <p>{`현재 페이지 = [ ${usePathname()} ]`}</p>
                 </div>
             </div>
         </div>
     );
 };
 
-export default NavigationTab;
+export default MultiPageNabTab;

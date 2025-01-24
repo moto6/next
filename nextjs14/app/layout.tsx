@@ -1,7 +1,8 @@
 import "../styles/global.css";
 import React from "react";
 import {Metadata} from "next";
-import NavigationTab from "../components/NavigationTab";
+import MultiPageNabTab from "../components/MultiPageNabTab";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata: Metadata = {
     title: {
@@ -20,7 +21,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <title></title>
         </head>
         <body>
-        <NavigationTab/>
+        <MultiPageNabTab/>
         {children}
         &copy; {new Date().getFullYear()}
         </body>

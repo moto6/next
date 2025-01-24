@@ -1,9 +1,9 @@
 export async function generateStaticParams() {
     const movieIds = ['1', '2', '3']; // 정적으로 생성할 ID 목록
-    return movieIds.map((id) => ({ id }));
+    return movieIds.map((id) => ({id}));
 }
 
-export default function MovieDetail({ params }: { params: { id: string } }) {
+export default function MovieDetail({params}: { params: { id: string } }) {
     return (
         <div>
             <h1>Movie Detail</h1>

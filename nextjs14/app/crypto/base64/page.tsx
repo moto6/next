@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function Base64Page() {
     return (
         <div>
-        <h1>Base64 hello! </h1>
+            <h1>Base64 hello! </h1>
         </div>
     );
 }
