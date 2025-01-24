@@ -1,32 +1,27 @@
-
 const LeftNavbar = () => {
     return (
-        <div>
-            <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-                <div className="position-sticky">
-                    <ul className="nav flex-column">
+        <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div className="position-sticky">
+                <ul className="nav flex-column">
 
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">dashboard</a>
-                        </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">dashboard</a>
+                    </li>
 
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Settings</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Reports</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Help</a>
-                        </li>
-                    </ul>
-
-
-                </div>
-            </nav>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Settings</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Reports</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Help</a>
+                    </li>
+                </ul>
 
 
-        </div>
+            </div>
+        </nav>
     );
 };
 

@@ -22,11 +22,13 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <title></title>
         </head>
         <body>
-        <div className="container-fluid mt-5 row" id="root">
-            <LeftNavbar/>
-            <MultiPageNabTab/>
-            {children}
-            &copy; {new Date().getFullYear()}
+        <div className="container-fluid mt-5">
+            <div className="row">
+                <LeftNavbar/>
+                <MultiPageNabTab/>
+                {children}
+                &copy; {new Date().getFullYear()}
+            </div>
         </div>
         </body>
         </html>
