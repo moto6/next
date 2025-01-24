@@ -1,12 +1,19 @@
-import {useState} from 'react';
+"use client";
+
+import {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
 
 export default function NavigationTab() {
     const [tabs, setTabs] = useState([
-        {id: 1, label: 'Home', href: '/'},
+        { id: 1, label: 'Home', href: '/' },
     ]);
+    const [isClient, setIsClient] = useState(false); // 클라이언트 렌더링 확인
     const router = useRouter();
+
+    useEffect(() => {
+        setIsClient(true); // 클라이언트 상태 활성화
+    }, []);
 
     // 탭 추가 함수
     const addTab = (tab) => {
