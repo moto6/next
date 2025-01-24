@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {fetchMoviesAction} from "../../action/fetchMovies";
+import {fetchMoviesAction} from "../../actions/fetchMovies";
 
 export const meatadata = {
     title: "Home"
