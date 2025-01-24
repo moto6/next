@@ -1,3 +1,3 @@
 export default function SettingPage() {
-    return <h1>Hello, Next.js!</h1>
+    return <h1>SettingPage</h1>
 }
