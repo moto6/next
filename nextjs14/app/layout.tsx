@@ -3,6 +3,7 @@ import React from "react";
 import {Metadata} from "next";
 import MultiPageNabTab from "../components/MultiPageNabTab";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import LeftNavbar from "../components/LeftNavbar";
 
 export const metadata: Metadata = {
     title: {
@@ -21,11 +22,15 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
             <title></title>
         </head>
         <body>
-        <MultiPageNabTab/>
-        {children}
-        &copy; {new Date().getFullYear()}
+        <div className="container-fluid mt-5 row" id="root">
+            <LeftNavbar/>
+            <MultiPageNabTab/>
+            {children}
+            &copy; {new Date().getFullYear()}
+        </div>
         </body>
         </html>
     )
 }
+//
 // <Navigation/>
