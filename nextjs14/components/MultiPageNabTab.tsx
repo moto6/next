@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {useTab} from "./TabContext";
 
 interface NavItem {
     id: number;
@@ -11,33 +12,32 @@ interface NavItem {
 }
 
 const MultiPageNabTab = () => {
-    const [tabs, setTabs] = useState<NavItem[]>([
-        {id: 1, label: "Home", href: "/"},
-    ]);
+    const { tabs, toggleTab, removeTab} = useTab();
+
 
     const router = useRouter();
 
     const addTab = 122;
-
-    const toggleTab = (item: NavItem) => {
-        if (!tabs.find((t) => t.href === item.href)) {
-            setTabs([...tabs, item]);
-        }
-        if (router) {
-            router.push(item.href);
-        }
-    };
-
-    const removeTab = (tabId) => {
-        const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
-        setTabs(updatedTabs);
-
-        if (updatedTabs.length > 0 && router) {
-            router.push(updatedTabs[updatedTabs.length - 1].href);
-        } else if (router) {
-            router.push("/");
-        }
-    };
+    //
+    // const toggleTab = (item: NavItem) => {
+    //     if (!tabs.find((t) => t.href === item.href)) {
+    //         setTabs([...tabs, item]);
+    //     }
+    //     if (router) {
+    //         router.push(item.href);
+    //     }
+    // };
+    //
+    // const removeTab = (tabId) => {
+    //     const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
+    //     setTabs(updatedTabs);
+    //
+    //     if (updatedTabs.length > 0 && router) {
+    //         router.push(updatedTabs[updatedTabs.length - 1].href);
+    //     } else if (router) {
+    //         router.push("/");
+    //     }
+    // };
 
     return (
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
@@ -47,12 +47,28 @@ const MultiPageNabTab = () => {
 
             {/* ============================================================================ */}
             {/* Left Navigation */}
-            {/*<div className="w-48 bg-gray-200 p-4">*/}
+            <div className="w-48 bg-gray-200 p-4">
+                <button
+                    onClick={() => toggleTab({id: 2, label: "Dashboard", href: "/dashboard"})}
+                    className="block mb-2"
+                >
+                    Dashboard
+                </button>
+                <button
+                    onClick={() => toggleTab({id: 3, label: "Settings", href: "/settings"})}
+                    className="block mb-2"
+                >
+                    Settings
+                </button>
+            </div>
 
-            {/* ============================================================================ */}
-            {/* Main Content */}
+            {/* ============================================================================ */
+            }
+            {/* Main Content */
+            }
 
-            {/* Tabs */}
+            {/* Tabs */
+            }
             <div className="flex bg-gray-100 p-2 border-b">
                 {tabs.map((tab) => (
                     <div

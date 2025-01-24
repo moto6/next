@@ -1,11 +1,31 @@
+import {useTab} from "./TabContext";
+import React from "react";
+
 const LeftNavbar = () => {
+    const { tabs, toggleTab, removeTab} = useTab();
+
     return (
         <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
             <div className="position-sticky">
                 <ul className="nav flex-column">
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#">dashboard</a>
+                        <a className="nav-link" href="#"
+                           onClick={() => toggleTab({id: 2, label: "Dashboard", href: "/dashboard"})}
+                        >dashboard</a>
+
+                        <button
+                            onClick={() => toggleTab({id: 2, label: "Dashboard", href: "/dashboard"})}
+                            className="block mb-2"
+                        >
+                            Dashboard
+                        </button>
+                        <button
+                            onClick={() => toggleTab({id: 3, label: "Settings", href: "/settings"})}
+                            className="block mb-2"
+                        >
+                            Settings
+                        </button>
                     </li>
 
                     <li className="nav-item">

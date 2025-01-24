@@ -4,6 +4,8 @@ import {Metadata} from "next";
 import MultiPageNabTab from "../components/MultiPageNabTab";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LeftNavbar from "../components/LeftNavbar";
+import {TabProvider} from "../components/TabContext";
+import TabAndNavbarLayout from "../components/TabAndNavbarLayout";
 
 export const metadata: Metadata = {
     title: {
@@ -24,8 +26,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <body>
         <div className="container-fluid mt-5">
             <div className="row">
-                <LeftNavbar/>
-                <MultiPageNabTab/>
+                <TabAndNavbarLayout/>
                 {children}
                 &copy; {new Date().getFullYear()}
             </div>

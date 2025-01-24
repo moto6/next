@@ -1,3 +1,5 @@
+"use client"
+
 import React, {createContext, useContext, useState} from "react";
 import {useRouter} from "next/navigation";
 
@@ -27,7 +29,8 @@ export const TabProvider: React.FC<{ children: React.ReactNode }> = ({children})
             router.push(item.href);
         }
     };
-    const removeTab = (tabId) => {
+
+    const removeTab = (tabId: number) => {
         const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
         setTabs(updatedTabs);
 
@@ -37,8 +40,9 @@ export const TabProvider: React.FC<{ children: React.ReactNode }> = ({children})
             router.push("/");
         }
     };
+
     return (
-        <TabContext.Provider value={{tabs, toggleTab}}>
+        <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
             {children}
         </TabContext.Provider>
     );
