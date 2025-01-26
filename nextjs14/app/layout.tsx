@@ -1,10 +1,7 @@
 import "../styles/global.css";
 import React from "react";
 import {Metadata} from "next";
-import MultiPageNabTab from "../components/MultiPageNabTab";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LeftNavbar from "../components/LeftNavbar";
-import {TabProvider} from "../components/TabContext";
 import TabAndNavbarLayout from "../components/TabAndNavbarLayout";
 
 export const metadata: Metadata = {
