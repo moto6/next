@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import {usePathname, useRouter} from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useTab} from "./TabContext";
+import {useTab} from "./TabAndNavbarLayout";
 
 interface NavItem {
     id: number;
