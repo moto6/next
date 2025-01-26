@@ -14,7 +14,7 @@ const LeftNavbar = () => {
                     <li className="nav-item">
                         <a className="nav-link" onClick={() =>
                             openTab({id: 2, label: "About-Us", href: "/about-us"})}
-                        >Dashboard</a>
+                        >About-Us</a>
                     </li>
 
                     <li className="nav-item">
