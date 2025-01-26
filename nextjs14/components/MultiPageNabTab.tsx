@@ -1,8 +1,8 @@
 "use client";
 
-import React, {useState} from "react";
+import React from "react";
 import Link from "next/link";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useTab} from "./TabAndNavbarLayout";
 
@@ -13,45 +13,11 @@ interface NavItem {
 }
 
 const MultiPageNabTab = () => {
-    const { tabs, toggleTab, removeTab} = useTab();
-
-
-    const router = useRouter();
-
-    const addTab = 122;
-    //
-    // const toggleTab = (item: NavItem) => {
-    //     if (!tabs.find((t) => t.href === item.href)) {
-    //         setTabs([...tabs, item]);
-    //     }
-    //     if (router) {
-    //         router.push(item.href);
-    //     }
-    // };
-    //
-    // const removeTab = (tabId) => {
-    //     const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
-    //     setTabs(updatedTabs);
-    //
-    //     if (updatedTabs.length > 0 && router) {
-    //         router.push(updatedTabs[updatedTabs.length - 1].href);
-    //     } else if (router) {
-    //         router.push("/");
-    //     }
-    // };
-
+    const {tabs, openTab, removeTab} = useTab();
     return (
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <h1>Main Content</h1>
             <p>This is the main content area.</p>
-
-
-
-            {/* Main Content */
-            }
-
-            {/* Tabs */
-            }
             <div className="flex bg-gray-100 p-2 border-b">
                 {tabs.map((tab) => (
                     <div

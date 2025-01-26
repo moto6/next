@@ -13,7 +13,7 @@ interface NavItem {
 
 interface TabContextProps {
     tabs: NavItem[];
-    toggleTab: (item: NavItem) => void;
+    openTab: (item: NavItem) => void;
     removeTab: (id: number) => void;
 }
 
@@ -52,7 +52,7 @@ const TabAndNavbarLayout: React.FC = () => {
     };
 
     return (
-        <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
+        <TabContext.Provider value={{tabs, openTab: toggleTab, removeTab}}>
                 <LeftNavbar/>
                 <MultiPageNabTab/>
         </TabContext.Provider>
