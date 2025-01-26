@@ -53,10 +53,8 @@ const TabAndNavbarLayout: React.FC = () => {
 
     return (
         <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
-            <div className="flex">
                 <LeftNavbar/>
                 <MultiPageNabTab/>
-            </div>
         </TabContext.Provider>
     );
 };
