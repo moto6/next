@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, {createContext, useContext, useState} from "react";
 import MultiPageNabTab from "./MultiPageNabTab";
@@ -17,10 +17,7 @@ interface TabContextProps {
     removeTab: (id: number) => void;
 }
 
-
 const TabContext = createContext<TabContextProps | undefined>(undefined);
-
-// export const TabConP: React.FC<{ children: React.ReactNode }> = ({children}) => {
 
 export const useTab = () => {
     const context = useContext(TabContext);
@@ -30,8 +27,7 @@ export const useTab = () => {
     return context;
 };
 
-
-const TabAndNavbarLayout = () => {
+const TabAndNavbarLayout: React.FC = () => {
     const [tabs, setTabs] = useState<NavItem[]>([{id: 1, label: "Home", href: "/"}]);
     const router = useRouter();
 
@@ -56,11 +52,12 @@ const TabAndNavbarLayout = () => {
     };
 
     return (
-        // <LeftNavbar  {...pageProps}>
-        <LeftNavbar>
-            <MultiPageNabTab>
-            </MultiPageNabTab>
-        </LeftNavbar>
+        <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
+            <div className="flex">
+                <LeftNavbar/>
+                <MultiPageNabTab/>
+            </div>
+        </TabContext.Provider>
     );
 };
 

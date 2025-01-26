@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import {useTab} from "./TabAndNavbarLayout";
 // import {useTab} from "./TabContext";
