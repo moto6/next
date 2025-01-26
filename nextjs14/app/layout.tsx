@@ -24,7 +24,6 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <div className="container-fluid mt-5">
             <div className="row">
                 <TabAndNavbarLayout/>
-                {children}
                 &copy; {new Date().getFullYear()}
             </div>
         </div>

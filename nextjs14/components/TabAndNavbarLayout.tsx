@@ -1,7 +1,7 @@
 "use client";
 
 import React, {createContext, useContext, useState} from "react";
-import MultiPageNabTab from "./MultiPageNabTab";
+import TopSideMultiPagesTab from "./MultiPageNabTab";
 import LeftNavbar from "./LeftNavbar";
 import {useRouter} from "next/navigation";
 
@@ -27,7 +27,7 @@ export const useTab = () => {
     return context;
 };
 
-const TabAndNavbarLayout: React.FC = () => {
+const TabAndNavbarLayout: React.FC = ({children}: { children: React.ReactNode }) => {
     const [tabs, setTabs] = useState<NavItem[]>([{id: 1, label: "Home", href: "/"}]);
     const router = useRouter();
 
@@ -53,8 +53,12 @@ const TabAndNavbarLayout: React.FC = () => {
 
     return (
         <TabContext.Provider value={{tabs, openTab: toggleTab, removeTab}}>
-                <LeftNavbar/>
-                <MultiPageNabTab/>
+            <LeftNavbar>
+            </LeftNavbar>
+            <TopSideMultiPagesTab>
+                {children}
+            </TopSideMultiPagesTab>
+
         </TabContext.Provider>
     );
 };

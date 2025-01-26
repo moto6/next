@@ -6,19 +6,14 @@ import {usePathname} from "next/navigation";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useTab} from "./TabAndNavbarLayout";
 
-interface NavItem {
-    id: number;
-    label: string;
-    href: string;
-}
-
-const MultiPageNabTab = () => {
+const MultiPageNabTab = ({children}: { children: React.ReactNode }) => {
     const {tabs, openTab, removeTab} = useTab();
     return (
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-            <h1>Main Content</h1>
-            <p>This is the main content area.</p>
             <div className="flex bg-gray-100 p-2 border-b">
+                {/*<h1>Main Content</h1>*/}
+                {/*<p>This is the main content area.</p>*/}
+
                 {tabs.map((tab) => (
                     <div
                         key={tab.id}
@@ -33,7 +28,7 @@ const MultiPageNabTab = () => {
                     </div>
                 ))}
             </div>
-
+            {children}
             {/* Content Area */}
             <div className="p-4">
                 <p>{`현재 페이지 = [ ${usePathname()} ]`}</p>
