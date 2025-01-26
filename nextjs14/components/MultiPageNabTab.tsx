@@ -46,25 +46,7 @@ const MultiPageNabTab = () => {
             <p>This is the main content area.</p>
 
 
-            {/* ============================================================================ */}
-            {/* Left Navigation */}
-            <div className="w-48 bg-gray-200 p-4">
-                <button
-                    onClick={() => toggleTab({id: 2, label: "Dashboard", href: "/dashboard"})}
-                    className="block mb-2"
-                >
-                    Dashboard
-                </button>
-                <button
-                    onClick={() => toggleTab({id: 3, label: "Settings", href: "/settings"})}
-                    className="block mb-2"
-                >
-                    Settings
-                </button>
-            </div>
 
-            {/* ============================================================================ */
-            }
             {/* Main Content */
             }
 
