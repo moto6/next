@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     },
     description: "App desc",
 }
-
-export default function RootLayout({children}: { children: React.ReactNode }) {
+//: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
     return (
         <html lang="en">
         <head>
@@ -23,7 +23,7 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         <body>
         <div className="container-fluid mt-5">
             <div className="row">
-                <TabAndNavbarLayout/>
+                <TabAndNavbarLayout>{children}</TabAndNavbarLayout>
                 &copy; {new Date().getFullYear()}
             </div>
         </div>
@@ -31,5 +31,6 @@ export default function RootLayout({children}: { children: React.ReactNode }) {
         </html>
     )
 }
+export default RootLayout;
 //
 // <Navigation/>

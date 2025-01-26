@@ -27,7 +27,7 @@ export const useTab = () => {
     return context;
 };
 
-const TabAndNavbarLayout: React.FC = ({children}: { children: React.ReactNode }) => {
+const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children}) => {
     const [tabs, setTabs] = useState<NavItem[]>([{id: 1, label: "Home", href: "/"}]);
     const router = useRouter();
 
@@ -58,6 +58,7 @@ const TabAndNavbarLayout: React.FC = ({children}: { children: React.ReactNode })
             <MultiPageNabTab>
                 {children}
             </MultiPageNabTab>
+
         </TabContext.Provider>
     );
 };
