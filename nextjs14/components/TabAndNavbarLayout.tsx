@@ -1,7 +1,7 @@
 "use client";
 
 import React, {createContext, useContext, useState} from "react";
-import TopSideMultiPagesTab from "./MultiPageNabTab";
+import MultiPageNabTab from "./MultiPageNabTab";
 import LeftNavbar from "./LeftNavbar";
 import {useRouter} from "next/navigation";
 
@@ -55,10 +55,9 @@ const TabAndNavbarLayout: React.FC = ({children}: { children: React.ReactNode })
         <TabContext.Provider value={{tabs, openTab: toggleTab, removeTab}}>
             <LeftNavbar>
             </LeftNavbar>
-            <TopSideMultiPagesTab>
+            <MultiPageNabTab>
                 {children}
-            </TopSideMultiPagesTab>
-
+            </MultiPageNabTab>
         </TabContext.Provider>
     );
 };
