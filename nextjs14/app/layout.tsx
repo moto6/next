@@ -21,7 +21,7 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
             <title></title>
         </head>
         <body>
-        <div className="container-fluid mt-5">
+        <div className="container-fluid mt-3">
             <div className="row">
                 <TabAndNavbarLayout>{children}</TabAndNavbarLayout>
                 &copy; {new Date().getFullYear()}

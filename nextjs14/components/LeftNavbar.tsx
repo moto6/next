@@ -7,8 +7,8 @@ const LeftNavbar = () => {
     const {tabs, openTab, removeTab} = useTab();
 
     return (
-        <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar">
-            <div className="position-sticky">
+        <nav className="col-md-3 col-lg-2 d-md-block bg-light sidebar mt-5">
+            <div className="position-sticky mt-2">
                 <ul className="nav flex-column">
 
                     <li className="nav-item">

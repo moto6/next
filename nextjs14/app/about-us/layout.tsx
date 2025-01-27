@@ -4,7 +4,7 @@ const AboutUsLayout = ({children}: { children: React.ReactNode }) => {
     return (
         <div>
             {children}
-            &copy; Next JS is great!
+            &copy; <a href="https://nextjs.org">NEXT.js</a> sample application built in
         </div>
     );
 };
