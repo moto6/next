@@ -58,7 +58,6 @@ const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children})
             <MultiPageNabTab>
                 {children}
             </MultiPageNabTab>
-
         </TabContext.Provider>
     );
 };

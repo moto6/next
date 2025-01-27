@@ -9,7 +9,6 @@ const MultiPageNabTab: React.FC<{ children: React.ReactNode }> = ({children}) =>
     const {tabs, removeTab} = useTab();
     const pathname = usePathname();
     return (
-
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex bg-gray-100 p-2 border-bottom">
                 {tabs.map((tab) => (
@@ -28,7 +27,6 @@ const MultiPageNabTab: React.FC<{ children: React.ReactNode }> = ({children}) =>
             </div>
             {children}
         </main>
-
     );
 };
 
