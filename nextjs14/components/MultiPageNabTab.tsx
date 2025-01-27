@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
@@ -8,6 +6,7 @@ import {useTab} from "./TabAndNavbarLayout";
 const MultiPageNabTab: React.FC<{ children: React.ReactNode }> = ({children}) => {
     const {tabs, removeTab} = useTab();
     const pathname = usePathname();
+
     return (
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex bg-gray-100 p-2 border-bottom">
@@ -19,7 +18,11 @@ const MultiPageNabTab: React.FC<{ children: React.ReactNode }> = ({children}) =>
                         <Link href={tab.href} className="nav-link me-2">
                             {tab.label}
                         </Link>
-                        <button onClick={() => removeTab(tab.id)} className="btn btn-link text-danger p-0">
+                        <button
+                            onClick={() => removeTab(tab.id)}
+                            className="btn btn-link text-danger p-0"
+                            aria-label={`Close tab: ${tab.label}`}
+                        >
                             x
                         </button>
                     </div>
