@@ -20,15 +20,15 @@ export default function AboutUsPage() {
             <div
                 id="carouselIndicators"
                 className="carousel slide"
-                data-bs-ride="carousel"
+                data-bs-ride="carousel"  // 자동 회전
+                data-bs-interval="3000"   // 3초 간격으로 회전
             >
-
                 <div className="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0"
                             className="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"
                             aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2"
                             aria-label="Slide 3"></button>
                 </div>
                 <div className="carousel-inner">
@@ -77,7 +77,7 @@ export default function AboutUsPage() {
                 <button
                     className="carousel-control-prev"
                     type="button"
-                    data-bs-target="#carouselExample"
+                    data-bs-target="#carouselIndicators"
                     data-bs-slide="prev"
                 >
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -86,13 +86,16 @@ export default function AboutUsPage() {
                 <button
                     className="carousel-control-next"
                     type="button"
-                    data-bs-target="#carouselExample"
+                    data-bs-target="#carouselIndicators"
                     data-bs-slide="next"
                 >
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossOrigin="anonymous"></script>
         </div>
     );
 }
