@@ -14,7 +14,7 @@ this aspect offering Radio button between  "Base64" VS "Hex"
 =============
  */
 
-export default function FormRadioButton() {
+export default function TextFormRadioButton() {
     const [selectedValue, setSelectedValue] = useState("Base64");
 
     const handleChange = (event) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FormRadioButton from "../../../components/aspect/FormRadioButton";
+import TextFormRadioButton from "../../../components/aspect/TextFormRadioButton";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -66,7 +66,7 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Output Text Format</label>
-                                        <FormRadioButton/>
+                                        <TextFormRadioButton/>
                                     </div>
                                     <button type="button" className="btn btn-primary w-100">Encrypt</button>
                                 </form>

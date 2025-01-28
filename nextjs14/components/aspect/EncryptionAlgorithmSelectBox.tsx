@@ -2,10 +2,9 @@
 
 import React from "react";
 
-export default function EncryptionAlgorithms() {
+export default function EncryptionAlgorithmSelectBox() {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-white">
-            <label htmlFor="algorithmSelect" className="form-label">Algorithm & Token Type</label>
+        <div>
             <select id="algorithmSelect" className="form-select">
                 <option value="HS256">HS256</option>
                 <option value="HS384">HS384</option>
@@ -21,5 +20,5 @@ export default function EncryptionAlgorithms() {
                 <option value="PS512">PS512</option>
             </select>
         </div>
-    )
+    );
 }

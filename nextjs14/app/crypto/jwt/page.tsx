@@ -1,7 +1,7 @@
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import EncryptionAlgorithms from "../../../components/aspect/EncryptionAlgorithms";
+import EncryptionAlgorithmSelectBox from "../../../components/aspect/EncryptionAlgorithmSelectBox";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -22,7 +22,10 @@ export default function JwtPage() {
                 <div className="col-md-6">
                     <h4>Decoded</h4>
                     <div className="mb-3">
-                        <EncryptionAlgorithms/>
+                        <div className="flex flex-col items-center justify-center h-screen bg-white">
+                            <label htmlFor="algorithmSelect" className="form-label">Algorithm & Token Type</label>
+                            <EncryptionAlgorithmSelectBox/>
+                        </div>
                     </div>
                     <div className="border p-3 bg-light" id="decodedPayload">
                         <pre className="mb-0">Decoded payload will appear here...</pre>
