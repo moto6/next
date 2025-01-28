@@ -1,6 +1,7 @@
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FormRadioButton from "../../../components/aspect/FormRadioButton";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -65,29 +66,7 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Output Text Format</label>
-
-
-                                        <div>
-                                            <div className="form-check form-check-inline">
-                                                <input type="radio"
-                                                       id="outputBase64"
-                                                       name="outputFormat"
-                                                       className="form-check-input"
-                                                       value="Base64"
-                                                />
-                                                <label htmlFor="outputBase64"
-                                                       className="form-check-label">Base64</label>
-                                            </div>
-                                            <div className="form-check form-check-inline">
-                                                <input type="radio"
-                                                       id="outputHex"
-                                                       name="outputFormat"
-                                                       className="form-check-input"
-                                                       value="Hex"/>
-                                                <label
-                                                    htmlFor="outputHex" className="form-check-label">Hex</label>
-                                            </div>
-                                        </div>
+                                        <FormRadioButton/>
                                     </div>
                                     <button type="button" className="btn btn-primary w-100">Encrypt</button>
                                 </form>
@@ -177,11 +156,7 @@ export default function AesPage() {
                         </div>
                     </div>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
             </div>
-
-
         </div>
     )
 }
