@@ -5,16 +5,21 @@ import MultiPageNabTab from "./MultiPageNabTab";
 import LeftNavbar from "./LeftNavbar";
 import {useRouter} from "next/navigation";
 
+interface createNavItem {
+    label: string;
+    href: string;
+}
+
 interface NavItem {
-    id: number;
+    id: string;
     label: string;
     href: string;
 }
 
 interface TabContextProps {
     tabs: NavItem[];
-    toggleTab: (item: NavItem) => void;
-    removeTab: (id: number) => void;
+    openTab: (item: createNavItem) => void;
+    removeTab: (id: string) => void;
 }
 
 const TabContext = createContext<TabContextProps | undefined>(undefined);
@@ -28,19 +33,19 @@ export const useTab = () => {
 };
 
 const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children}) => {
-    const [tabs, setTabs] = useState<NavItem[]>([{id: 1, label: "Home", href: "/"}]);
+    const [tabs, setTabs] = useState<NavItem[]>([{id: crypto.randomUUID(), label: "Home", href: "/"}]);
     const router = useRouter();
 
-    const toggleTab = (item: NavItem) => {
+    const openTab = (item: createNavItem) => {
         if (!tabs.find((t) => t.href === item.href)) {
-            setTabs([...tabs, item]);
+            setTabs([...tabs, {id: crypto.randomUUID(), label: item.label, href: item.href}]);
         }
         if (router) {
             router.push(item.href);
         }
     };
 
-    const removeTab = (tabId: number) => {
+    const removeTab = (tabId: string) => {
         const updatedTabs = tabs.filter((tab) => tab.id !== tabId);
         setTabs(updatedTabs);
 
@@ -52,7 +57,7 @@ const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children})
     };
 
     return (
-        <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
+        <TabContext.Provider value={{tabs, openTab, removeTab}}>
             <LeftNavbar>
             </LeftNavbar>
             <MultiPageNabTab>
