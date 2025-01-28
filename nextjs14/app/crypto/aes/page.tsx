@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 }
 
 export default function AesPage() {
+    //const [selectedOutputFormat, setSelectedOutputFormat] = React.useState("Base64")
     return (
         <div>
             <div className="container my-5">
@@ -26,15 +27,19 @@ export default function AesPage() {
                                     <div className="mb-3">
                                         <label htmlFor="cipherMode" className="form-label">Select Cipher Mode of
                                             Encryption</label>
-                                        <select id="cipherMode" className="form-select">
-                                            <option value="CBC" selected>CBC</option>
+                                        <select id="cipherMode"
+                                                className="form-select"
+                                                defaultValue="CBC">
+                                            <option value="CBC">CBC</option>
                                             <option value="ECB">ECB</option>
                                         </select>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="padding" className="form-label">Select Padding</label>
-                                        <select id="padding" className="form-select">
-                                            <option value="PKCS5Padding" selected>PKCS5Padding</option>
+                                        <select id="padding"
+                                                className="form-select"
+                                                defaultValue="PKCS5Padding">
+                                            <option value="PKCS5Padding">PKCS5Padding</option>
                                             <option value="NoPadding">NoPadding</option>
                                         </select>
                                     </div>
@@ -45,8 +50,10 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="keySize" className="form-label">Key Size in Bits</label>
-                                        <select id="keySize" className="form-select">
-                                            <option value="128" selected>128</option>
+                                        <select id="keySize"
+                                                className="form-select"
+                                                defaultValue="128">
+                                            <option value="128">128</option>
                                             <option value="192">192</option>
                                             <option value="256">256</option>
                                         </select>
@@ -58,17 +65,27 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label className="form-label">Output Text Format</label>
+
+
                                         <div>
                                             <div className="form-check form-check-inline">
-                                                <input type="radio" id="outputBase64" name="outputFormat"
-                                                       className="form-check-input" value="Base64" checked/>
+                                                <input type="radio"
+                                                       id="outputBase64"
+                                                       name="outputFormat"
+                                                       className="form-check-input"
+                                                       value="Base64"
+                                                />
                                                 <label htmlFor="outputBase64"
                                                        className="form-check-label">Base64</label>
                                             </div>
                                             <div className="form-check form-check-inline">
-                                                <input type="radio" id="outputHex" name="outputFormat"
-                                                       className="form-check-input" value="Hex"/>
-                                                <label htmlFor="outputHex" className="form-check-label">Hex</label>
+                                                <input type="radio"
+                                                       id="outputHex"
+                                                       name="outputFormat"
+                                                       className="form-check-input"
+                                                       value="Hex"/>
+                                                <label
+                                                    htmlFor="outputHex" className="form-check-label">Hex</label>
                                             </div>
                                         </div>
                                     </div>
@@ -96,14 +113,14 @@ export default function AesPage() {
                                         <label htmlFor="cipherModeDecrypt" className="form-label">Select Cipher Mode of
                                             Decryption</label>
                                         <select id="cipherModeDecrypt" className="form-select">
-                                            <option value="CBC" selected>CBC</option>
+                                            <option value="CBC">CBC</option>
                                             <option value="ECB">ECB</option>
                                         </select>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="paddingDecrypt" className="form-label">Select Padding</label>
-                                        <select id="paddingDecrypt" className="form-select">
-                                            <option value="PKCS5Padding" selected>PKCS5Padding</option>
+                                        <select id="paddingDecrypt" className="form-select" defaultValue="PKCS5Padding">
+                                            <option value="PKCS5Padding">PKCS5Padding</option>
                                             <option value="NoPadding">NoPadding</option>
                                         </select>
                                     </div>
@@ -116,8 +133,8 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="keySizeDecrypt" className="form-label">Key Size in Bits</label>
-                                        <select id="keySizeDecrypt" className="form-select">
-                                            <option value="128" selected>128</option>
+                                        <select id="keySizeDecrypt" className="form-select" defaultValue="128">
+                                            <option value="128">128</option>
                                             <option value="192">192</option>
                                             <option value="256">256</option>
                                         </select>
@@ -133,8 +150,11 @@ export default function AesPage() {
                                         <label className="form-label">Output Text Format</label>
                                         <div>
                                             <div className="form-check form-check-inline">
-                                                <input type="radio" id="outputPlain" name="outputFormatDecrypt"
-                                                       className="form-check-input" value="Plain-Text" checked/>
+                                                <input type="radio" id="outputPlain"
+                                                       name="outputFormatDecrypt"
+                                                       className="form-check-input"
+                                                       value="Base64"
+                                                />
                                                 <label htmlFor="outputPlain"
                                                        className="form-check-label">Plain-Text</label>
                                             </div>
