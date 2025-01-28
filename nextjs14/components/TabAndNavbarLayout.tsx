@@ -13,7 +13,7 @@ interface NavItem {
 
 interface TabContextProps {
     tabs: NavItem[];
-    openTab: (item: NavItem) => void;
+    toggleTab: (item: NavItem) => void;
     removeTab: (id: number) => void;
 }
 
@@ -31,7 +31,7 @@ const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children})
     const [tabs, setTabs] = useState<NavItem[]>([{id: 1, label: "Home", href: "/"}]);
     const router = useRouter();
 
-    const openTab = (item: NavItem) => {
+    const toggleTab = (item: NavItem) => {
         if (!tabs.find((t) => t.href === item.href)) {
             setTabs([...tabs, item]);
         }
@@ -52,7 +52,7 @@ const TabAndNavbarLayout: React.FC<{ children: React.ReactNode }> = ({children})
     };
 
     return (
-        <TabContext.Provider value={{tabs, openTab, removeTab}}>
+        <TabContext.Provider value={{tabs, toggleTab, removeTab}}>
             <LeftNavbar>
             </LeftNavbar>
             <MultiPageNabTab>
