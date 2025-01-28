@@ -29,37 +29,37 @@ const LeftNavbar = () => {
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "AES", href: "/crypto/aes"})}
+                               openTab({label: "AES", href: "/content/aes"})}
                         >AES</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "BASE64", href: "/crypto/base64"})}
+                               openTab({label: "BASE64", href: "/content/base64"})}
                         >Base64</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "BASE32", href: "/crypto/base32"})}
+                               openTab({label: "BASE32", href: "/content/base32"})}
                         >Base32</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "rsa", href: "/crypto/rsa"})}
+                               openTab({label: "rsa", href: "/content/rsa"})}
                         >RSA</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "jwt", href: "/crypto/jwt"})}
+                               openTab({label: "jwt", href: "/content/jwt"})}
                         >JWT</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "hash", href: "/crypto/hash"})}
+                               openTab({label: "hash", href: "/content/hash"})}
                         >Hash</a>
                     </li>
                 </ul>
