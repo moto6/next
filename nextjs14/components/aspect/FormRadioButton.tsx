@@ -2,6 +2,18 @@
 
 import React, {useState} from "react";
 
+/*
+this aspect offering Radio button between  "Base64" VS "Hex"
+
+- looks like down below
+============
+
+[✅]Base64
+[   ]Hex
+
+=============
+ */
+
 export default function FormRadioButton() {
     const [selectedValue, setSelectedValue] = useState("Base64");
 
