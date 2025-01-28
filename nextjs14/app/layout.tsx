@@ -2,7 +2,7 @@ import "../styles/global.css";
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TabAndNavbarLayout from "../components/TabAndNavbarLayout";
+import TabAndNavbarLayout from "../components/aggregate/TabAndNavbarLayout";
 
 export const metadata: Metadata = {
     title: {

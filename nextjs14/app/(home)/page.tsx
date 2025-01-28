@@ -1,5 +1,5 @@
 import styles from "../../styles/home.module.css";
-import Movie from "../../components/Movie";
+import Movie from "../../components/aggregate/Movie";
 
 async function getMovies() {
     // const response = await fetch(API_URL);

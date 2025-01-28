@@ -1,7 +1,7 @@
 import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import EncryptionAlgorithms from "../../../components/EncryptionAlgorithms";
+import EncryptionAlgorithms from "../../../components/aspect/EncryptionAlgorithms";
 
 export const metadata: Metadata = {
     title: "aes",
