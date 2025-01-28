@@ -2,6 +2,8 @@ import React from "react";
 import {Metadata} from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TextFormRadioButton from "../../../components/aspect/TextFormRadioButton";
+import DecryptPaddingSelectBox from "../../../components/aspect/DecryptPaddingSelectBox";
+import KeySizeSelectBox from "../../../components/aspect/KeySizeSelectBox";
 
 export const metadata: Metadata = {
     title: "aes",
@@ -35,14 +37,9 @@ export default function AesPage() {
                                             <option value="ECB">ECB</option>
                                         </select>
                                     </div>
-                                    <div className="mb-3">
+                                    <div className="mb-3">Z
                                         <label htmlFor="padding" className="form-label">Select Padding</label>
-                                        <select id="padding"
-                                                className="form-select"
-                                                defaultValue="PKCS5Padding">
-                                            <option value="PKCS5Padding">PKCS5Padding</option>
-                                            <option value="NoPadding">NoPadding</option>
-                                        </select>
+                                        <DecryptPaddingSelectBox/>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="iv" className="form-label">Enter IV (Optional)</label>
@@ -51,13 +48,7 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="keySize" className="form-label">Key Size in Bits</label>
-                                        <select id="keySize"
-                                                className="form-select"
-                                                defaultValue="128">
-                                            <option value="128">128</option>
-                                            <option value="192">192</option>
-                                            <option value="256">256</option>
-                                        </select>
+                                        <KeySizeSelectBox/>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="secretKey" className="form-label">Enter Secret Key</label>
@@ -98,10 +89,7 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="paddingDecrypt" className="form-label">Select Padding</label>
-                                        <select id="paddingDecrypt" className="form-select" defaultValue="PKCS5Padding">
-                                            <option value="PKCS5Padding">PKCS5Padding</option>
-                                            <option value="NoPadding">NoPadding</option>
-                                        </select>
+                                        <DecryptPaddingSelectBox/>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="ivDecrypt" className="form-label">Enter IV Used During
@@ -112,11 +100,7 @@ export default function AesPage() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="keySizeDecrypt" className="form-label">Key Size in Bits</label>
-                                        <select id="keySizeDecrypt" className="form-select" defaultValue="128">
-                                            <option value="128">128</option>
-                                            <option value="192">192</option>
-                                            <option value="256">256</option>
-                                        </select>
+                                        <KeySizeSelectBox/>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="secretKeyDecrypt" className="form-label">Enter Secret Key used
