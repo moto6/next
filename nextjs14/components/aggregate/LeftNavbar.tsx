@@ -47,20 +47,26 @@ const LeftNavbar = () => {
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "rsa", href: "/content/rsa"})}
+                               openTab({label: "RSA", href: "/content/rsa"})}
                         >RSA</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "jwt", href: "/content/jwt"})}
+                               openTab({label: "JWT", href: "/content/jwt"})}
                         >JWT</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link"
                            onClick={() =>
-                               openTab({label: "hash", href: "/content/hash"})}
+                               openTab({label: "Hash", href: "/content/hash"})}
                         >Hash</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link"
+                           onClick={() =>
+                               openTab({label: "Text", href: "/content/text"})}
+                        >Text-Length</a>
                     </li>
                 </ul>
             </div>
