@@ -1,6 +1,5 @@
 import React from "react";
 import {Metadata} from "next";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import EncryptionAlgorithmSelectBox from "../../../components/aspect/EncryptionAlgorithmSelectBox";
 
 export const metadata: Metadata = {

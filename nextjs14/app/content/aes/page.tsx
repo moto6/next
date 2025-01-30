@@ -1,6 +1,5 @@
 import React from "react";
 import {Metadata} from "next";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import TextFormRadioButton from "../../../components/aspect/TextFormRadioButton";
 import DecryptPaddingSelectBox from "../../../components/aspect/DecryptPaddingSelectBox";
 import KeySizeSelectBox from "../../../components/aspect/KeySizeSelectBox";
