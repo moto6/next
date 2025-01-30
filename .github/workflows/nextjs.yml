@@ -50,6 +50,7 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+        working-directory: ./nextsj14
 
 
       - name: Setup Pages
