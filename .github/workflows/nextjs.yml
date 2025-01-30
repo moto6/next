@@ -20,12 +20,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: ./nextjs14
 
       - name: Detect package manager
         id: detect-package-manager
         run: |
+          cd nextjs14
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
@@ -46,6 +45,7 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+        
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
