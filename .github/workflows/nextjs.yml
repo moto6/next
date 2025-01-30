@@ -55,12 +55,12 @@ jobs:
         with:
           static_site_generator: next
 
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-${{ hashFiles('./nextjs14/**.[jt]s', './nextjs14/**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-
+#      - name: Restore cache
+#        uses: actions/cache@v4
+#        with:
+#          key: ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-${{ hashFiles('./nextjs14/**.[jt]s', './nextjs14/**.[jt]sx') }}
+#          restore-keys: |
+#            ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-
 
       - name: Install dependencies
         run: |
