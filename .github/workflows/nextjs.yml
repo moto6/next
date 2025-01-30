@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       working-directory: nextjs14
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -70,7 +71,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /out
+          path: /
 
   deploy:
     environment:
