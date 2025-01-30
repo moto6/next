@@ -26,7 +26,6 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          cd ./nextjs14
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
