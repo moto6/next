@@ -20,8 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: ./nextjs14
 
       - name: Detect package manager
         id: detect-package-manager
