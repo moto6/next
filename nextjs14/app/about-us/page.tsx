@@ -14,7 +14,7 @@ export default function AboutUsPage() {
         "/img/desc3.webp",
     ];
 
-    const imgSize = {width: 800, height: 600};
+    const imgSize = {width: 400, height: 400};
     return (
         <div className="container">
             <div
@@ -38,6 +38,7 @@ export default function AboutUsPage() {
                                height={imgSize.height}
                                className="d-block w-100"
                                alt="..."
+                               style={{ width: "auto", height: "auto" }}
                                unoptimized
                         />
                         <div className="carousel-caption d-none d-md-block">
@@ -51,6 +52,7 @@ export default function AboutUsPage() {
                                height={imgSize.height}
                                className="d-block w-100"
                                alt="..."
+                               style={{ width: "auto", height: "auto" }}
                                unoptimized
                         />
                         <div className="carousel-caption d-none d-md-block">
@@ -64,6 +66,7 @@ export default function AboutUsPage() {
                                height={imgSize.height}
                                className="d-block w-100"
                                alt="..."
+                               style={{ width: "auto", height: "auto" }}
                                unoptimized
                         />
                         <div className="carousel-caption d-none d-md-block">
