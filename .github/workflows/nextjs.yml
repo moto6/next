@@ -27,7 +27,7 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
-        working-directory: ./nextjs14
+        working-directory: ${{ env.working-directory }}
         run: |
           cd ./nextjs14/
           if [ -f "yarn.lock" ]; then
@@ -58,16 +58,15 @@ jobs:
       - name: Restore cache
         uses: actions/cache@v4
         with:
-          path: |
-            ./nextjs14/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-${{ hashFiles('./nextjs14/**.[jt]s', './nextjs14/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-
+          working-directory: ${{ env.working-directory }}
 
       - name: Install dependencies
         run: |
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-        working-directory: ./nextjs14
+        working-directory: ${{ env.working-directory }}
 
       - name: Build with Next.js
         run: |
