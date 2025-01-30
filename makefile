@@ -10,4 +10,4 @@ page-build:
 	cd ./nextjs14 && npm run build && cd ../ && cp -rf ./nextjs14/out/* ./docs/
 
 page-clean:
-	rm -rf
+	rm -rf ./docs/* && touch "./docs/.gitkeep"
