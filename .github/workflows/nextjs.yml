@@ -64,6 +64,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd ./nextjs14/
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.working-directory }}
 
