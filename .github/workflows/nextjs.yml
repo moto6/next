@@ -70,8 +70,9 @@ jobs:
 
       - name: Build with Next.js
         run: |
+          cd ./nextjs14/
           ${{ steps.detect-package-manager.outputs.runner }} next build
-        working-directory: ./nextjs14
+        working-directory: ${{ env.working-directory }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
