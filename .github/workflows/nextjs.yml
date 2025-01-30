@@ -27,7 +27,7 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
-        working-directory: ./nextjs14/
+        working-directory: ./nextjs14
         run: |
           cd ./nextjs14/
           if [ -f "yarn.lock" ]; then
@@ -66,13 +66,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ./nextjs14
           ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        working-directory: ./nextjs14
 
       - name: Build with Next.js
         run: |
-          cd ./nextjs14
           ${{ steps.detect-package-manager.outputs.runner }} next build
+        working-directory: ./nextjs14
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
