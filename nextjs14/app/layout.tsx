@@ -24,7 +24,11 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
         <div className="container-fluid mt-3">
             <div className="row">
                 <TabAndNavbarLayout>{children}</TabAndNavbarLayout>
-                &copy; {new Date().getFullYear()}
+                <div className="text-center">&copy; {new Date().getFullYear()}
+                    <p>
+                        for learning next.js
+                    </p>
+                </div>
             </div>
         </div>
         </body>
