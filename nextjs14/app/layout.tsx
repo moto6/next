@@ -26,7 +26,7 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
                 <TabAndNavbarLayout>{children}</TabAndNavbarLayout>
                 <div className="text-center">&copy; {new Date().getFullYear()}
                     <p>
-                        for learning next.js
+                        online encrypt & decrypt
                     </p>
                 </div>
             </div>
