@@ -61,7 +61,6 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-${{ hashFiles('./nextjs14/**.[jt]s', './nextjs14/**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('./nextjs14/**/package-lock.json', './nextjs14/**/yarn.lock') }}-
-          working-directory: ${{ env.working-directory }}
 
       - name: Install dependencies
         run: |
