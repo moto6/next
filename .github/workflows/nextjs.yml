@@ -27,9 +27,9 @@ jobs:
 
       - name: Detect package manager
         id: detect-package-manager
-        working-directory: ${{ env.working-directory }}
+        working-directory: ./nextjs14/
         run: |
-          cd ./nextjs14
+          cd ./nextjs14/
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
