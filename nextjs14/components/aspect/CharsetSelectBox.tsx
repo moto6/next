@@ -5,7 +5,7 @@ import {useState} from "react";
 export default function CharsetSelectBox() {
     const [errorMessage, setErrorMessage] = useState("");
     const supportedCharsets = ["UTF-8"];
-    const handleChange = (event) => {
+    const handleChange = (event: { currentTarget: { value: string; }; }) => {
         const newValue: string = event.currentTarget.value;
         console.log(supportedCharsets.indexOf(newValue));
         if (supportedCharsets.indexOf(newValue) === -1) {
