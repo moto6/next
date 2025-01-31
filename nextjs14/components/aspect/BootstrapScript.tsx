@@ -1,18 +1,20 @@
-"use client"
-
-import {useEffect} from "react";
+import { loadEnvConfig } from '@next/env'
 
 export default function BootstrapScript() {
-    useEffect(() => {
-        const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX
-        const script = document.createElement("script");
-        script.src = `${assetPrefix}/bootstrap/js/bootstrap.bundle.min.js`;
-        script.defer = true;
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script); // cleanup
-        };
-    }, []);
-    // return <div>Script is loading...</div>;
-    return (<div></div>);
+    const projectDir = process.cwd()
+    loadEnvConfig(projectDir)
+    console.log(projectDir);
+    console.log(`ENV : ${process.env.ENVIRONMENT}`);
+    return (
+        <script src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/bootstrap/js/bootstrap.bundle.min.js`} defer/>
+    );
 }
+
+{/*<script src="/bootstrap/js/bootstrap.bundle.min.js" defer></script>*/
+}
+
+//export default function BootstrapSheet() {
+//     return (
+//         <link rel="stylesheet" href={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/bootstrap/css/bootstrap.min.css`}/>
+//     );
+// }
