@@ -32,7 +32,7 @@ export default function AboutUsPage() {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <Image src="/img/desc1.webp"
+                        <Image src={images[0]}
                                width={imgSize.width}
                                height={imgSize.height}
                                className="d-block w-100"
@@ -46,7 +46,7 @@ export default function AboutUsPage() {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <Image src="/img/desc2.webp"
+                        <Image src={images[1]}
                                width={imgSize.width}
                                height={imgSize.height}
                                className="d-block w-100"
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <Image src="/img/desc3.webp"
+                        <Image src={images[2]}
                                width={imgSize.width}
                                height={imgSize.height}
                                className="d-block w-100"
