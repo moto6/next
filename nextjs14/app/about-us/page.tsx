@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 export default function AboutUsPage() {
     const images = [
-        "/img/desc1.webp",
-        "/img/desc2.webp",
-        "/img/desc3.webp",
+        `${process.env.NEXT_PUBLIC_ASSET_PREFIX}/img/desc1.webp`,
+        `${process.env.NEXT_PUBLIC_ASSET_PREFIX}/img/desc2.webp`,
+        `${process.env.NEXT_PUBLIC_ASSET_PREFIX}/img/desc3.webp`,
     ];
 
     const imgSize = {width: 400, height: 400};
