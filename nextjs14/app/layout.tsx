@@ -16,6 +16,8 @@ import {Metadata} from "next";
 
 import TabAndNavbarLayout from "../components/aggregate/TabAndNavbarLayout";
 import RootComponent from "../components/aggregate/RootComponent";
+import BootstrapScript from "../components/aspect/BootstrapScript";
+import BootstrapSheet from "../components/aspect/BootstrapSheet";
 
 export const metadata: Metadata = {
     title: {
@@ -32,7 +34,8 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
             <meta charSet="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title></title>
-            <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+            <BootstrapSheet/>
+            {/*<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>*/}
         </head>
         <body>
         <RootComponent/>
@@ -46,7 +49,9 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
                 </div>
             </div>
             <footer>
-                <script src="/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+                <BootstrapScript/>
+                {/*<script src="/bootstrap/js/bootstrap.bundle.min.js" defer></script>*/}
+
             </footer>
         </div>
         </body>

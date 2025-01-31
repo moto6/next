@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "ENV=local next dev -p 3000",
+    "build": "ENV=prod next build",
+    "start": "ENV=prod next start",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
