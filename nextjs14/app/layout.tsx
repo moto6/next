@@ -46,7 +46,7 @@ const RootLayout: React.FC = ({children}: { children: React.ReactNode }) => {
                 </div>
             </div>
             <footer>
-                <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="/bootstrap/js/bootstrap.bundle.min.js" defer></script>
             </footer>
         </div>
         </body>

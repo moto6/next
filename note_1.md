@@ -101,11 +101,6 @@ Hook은 React에서 상태나 부수 효과를 관리하기 위해 사용하는 
 
 -------
 
-## CSR vs SSR
-
-
-CSR 
-
 
 
 ---
@@ -118,8 +113,11 @@ CSR
 ## 'use client' 의 의미
 
 https://nextjs.org/docs/app/building-your-application/rendering/client-components
-
-
+https://react.dev/reference/rsc/use-client
+https://react.dev/reference/rsc/use-client#when-to-use-use-client
+- (아주쉽고 많은 비약을 갖지만) 클라이언트 사이드에서 동작하는 부분을 만들때 파일 최상단에 표시해주는거
+-  서버에서 실행되는 코드와 클라이언트에서 실행되는 코드 간의 경계로 처리함 (호환번들러 => Vite) 
+- 서버 코드에서 imported 된 client component 가 클라쪽에서 동작할꺼라고 evaluated 하도록 만들어줌
 
 ## fetch
 Next.js는 기본 웹 fetch() API를 확장하여 서버의 각 요청이 자체 영구 캐싱 의미를 설정할 수 있도록 합니다.
